@@ -8,12 +8,12 @@ TODO
 
 ## About
 VRobot allows you to progrmm either harvesting robots or building robots. Both types of robots are programmed using a visual programming language provided by the mod API **[Visibilis](https://github.com/CAS-ual-TY/Visibilis)**.
-**Harvesting Robots**
+#### Harvesting Robots
 - Can not go through walls (TODO)
 - Use tools to harvest; affected by enchantments (like silk touch) and other tool features (TiC hammers!)
 - Require energy (any furnace fuel also works) (TODO)
 
-**Building Robots** (TODO)
+#### Building Robots (TODO)
 - Can go through walls
 - Can place blocks
 - Require energy (any furnace fuel also works) (TODO)
