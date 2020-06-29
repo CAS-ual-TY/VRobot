@@ -16,6 +16,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.Vec3d;
 
+@SuppressWarnings("deprecation")
 public class RobotRenderer extends EntityRenderer<RobotEntity>
 {
     public static final ResourceLocation TEXTURE_LOCATION = new ResourceLocation(VRobot.MOD_ID, "textures/entity/robot.png");
@@ -25,7 +26,6 @@ public class RobotRenderer extends EntityRenderer<RobotEntity>
         super(renderManager);
     }
     
-    @SuppressWarnings("deprecation")
     @Override
     public void render(RobotEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn)
     {

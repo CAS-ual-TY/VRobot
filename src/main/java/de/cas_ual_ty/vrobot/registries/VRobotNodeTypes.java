@@ -1,6 +1,5 @@
 package de.cas_ual_ty.vrobot.registries;
 
-import de.cas_ual_ty.visibilis.node.Node;
 import de.cas_ual_ty.visibilis.node.NodeEvent;
 import de.cas_ual_ty.visibilis.node.NodeType;
 import de.cas_ual_ty.vrobot.VRobot;
@@ -44,9 +43,9 @@ public class VRobotNodeTypes
     public static final NodeType<?> DEBUG = null; //TODO
     
     @SubscribeEvent
-    public static void register(Register<NodeType<? extends Node>> event)
+    public static void register(Register<NodeType<?>> event)
     {
-        IForgeRegistry<NodeType<? extends Node>> registry = event.getRegistry();
+        IForgeRegistry<NodeType<?>> registry = event.getRegistry();
         
         registry.register(new NodeType<>((type) -> new NodeEvent(type, type.getRegistryName().getNamespace(), type.getRegistryName().getPath())).setRegistryName(VRobot.MOD_ID, "initialize"));
         registry.register(new NodeType<>((type) -> new NodeEvent(type, type.getRegistryName().getNamespace(), type.getRegistryName().getPath())).setRegistryName(VRobot.MOD_ID, "tick"));
