@@ -36,6 +36,8 @@ public class VRobotNodeTypes
     public static final NodeType<?> PREV_SLOT = null;
     public static final NodeType<?> RESET_SLOT = null;
     public static final NodeType<?> HARVEST = null;
+    public static final NodeType<?> HARVEST_BELOW = null;
+    public static final NodeType<?> HARVEST_ABOVE = null;
     
     public static final NodeType<?> EXPORT_ITEMS = null;
     public static final NodeType<?> GET_ITEM_HANDLER_BLOCK = null;
@@ -64,6 +66,8 @@ public class VRobotNodeTypes
         registry.register(new NodeType<>((type) -> new RobotActionNode(type, VRobotActionTypes.PREV_SLOT)).setRegistryName(VRobot.MOD_ID, "prev_slot"));
         registry.register(new NodeType<>((type) -> new RobotActionNode(type, VRobotActionTypes.RESET_SLOT)).setRegistryName(VRobot.MOD_ID, "reset_slot"));
         registry.register(new NodeType<>((type) -> new RobotActionNode(type, VRobotActionTypes.HARVEST)).setRegistryName(VRobot.MOD_ID, "harvest"));
+        registry.register(new NodeType<>((type) -> new RobotActionNode(type, VRobotActionTypes.HARVEST_BELOW)).setRegistryName(VRobot.MOD_ID, "harvest_below"));
+        registry.register(new NodeType<>((type) -> new RobotActionNode(type, VRobotActionTypes.HARVEST_ABOVE)).setRegistryName(VRobot.MOD_ID, "harvest_above"));
         
         registry.register(new NodeType<>((type) -> new ExportItemsNode(type)).setRegistryName(VRobot.MOD_ID, "export_items"));
         registry.register(new NodeType<>((type) -> new ItemHandlerBlockNode(type)).setRegistryName(VRobot.MOD_ID, "get_item_handler_block"));

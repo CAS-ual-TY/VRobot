@@ -35,6 +35,8 @@ public class RobotNodeListProvider extends NodeListProviderBase
         list.add(VRobotNodeTypes.PREV_SLOT.instantiate());
         list.add(VRobotNodeTypes.RESET_SLOT.instantiate());
         list.add(VRobotNodeTypes.HARVEST.instantiate());
+        list.add(VRobotNodeTypes.HARVEST_BELOW.instantiate());
+        list.add(VRobotNodeTypes.HARVEST_ABOVE.instantiate());
         list.add(VRobotNodeTypes.EXPORT_ITEMS.instantiate());
         list.add(VRobotNodeTypes.GET_ITEM_HANDLER_BLOCK.instantiate());
         list.add(VRobotNodeTypes.DEBUG.instantiate()); //TODO

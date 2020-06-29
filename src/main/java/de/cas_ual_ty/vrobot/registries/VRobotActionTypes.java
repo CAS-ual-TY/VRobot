@@ -39,6 +39,8 @@ public class VRobotActionTypes
     public static final RobotActionType PREV_SLOT = null;
     public static final RobotActionType RESET_SLOT = null;
     public static final RobotActionType HARVEST = null;
+    public static final RobotActionType HARVEST_BELOW = null;
+    public static final RobotActionType HARVEST_ABOVE = null;
     
     public static final RobotActionType DEBUG = null; //TODO
     
@@ -142,6 +144,114 @@ public class VRobotActionTypes
                 return false;
             }
         }.setRegistryName(VRobot.MOD_ID, "harvest"));
+        
+        registry.register(new RobotActionType()
+        {
+            @Override
+            public void onStart(RobotEntity robot, RobotAction instance)
+            {
+                super.onStart(robot, instance);
+                
+                BlockPos pos = robot.getPosition().down();
+                
+                if(!robot.world.isAirBlock(pos))
+                {
+                    robot.getActiveItemStack().onBlockStartBreak(pos, robot.getFakePlayer());
+                }
+            }
+            
+            @Override
+            public void tick(RobotEntity robot, RobotAction instance)
+            {
+                super.tick(robot, instance);
+                
+                BlockPos pos = robot.getPosition().down();
+                
+                if(!robot.world.isAirBlock(pos))
+                {
+                    robot.world.sendBlockBreakProgress(robot.getEntityId(), pos, ((instance.getTime()) * 10) / robot.getCurrentDestroyTime());
+                }
+            }
+            
+            @Override
+            public boolean isDone(RobotEntity robot, RobotAction instance)
+            {
+                BlockPos pos = robot.getPosition().down();
+                
+                if(robot.world.isAirBlock(pos))
+                {
+                    return true;
+                }
+                
+                if(instance.getTime() >= robot.getCurrentDestroyTime())
+                {
+                    BlockState state = robot.world.getBlockState(pos);
+                    ItemStack itemStack = robot.getActiveItemStack();
+                    
+                    itemStack.onBlockDestroyed(robot.world, state, pos, robot.getFakePlayer());
+                    robot.insertItems(robot.getDrops(itemStack, pos, state));
+                    robot.world.removeBlock(pos, false);
+                    
+                    return true;
+                }
+                
+                return false;
+            }
+        }.setRegistryName(VRobot.MOD_ID, "harvest_below"));
+        
+        registry.register(new RobotActionType()
+        {
+            @Override
+            public void onStart(RobotEntity robot, RobotAction instance)
+            {
+                super.onStart(robot, instance);
+                
+                BlockPos pos = robot.getPosition().up();
+                
+                if(!robot.world.isAirBlock(pos))
+                {
+                    robot.getActiveItemStack().onBlockStartBreak(pos, robot.getFakePlayer());
+                }
+            }
+            
+            @Override
+            public void tick(RobotEntity robot, RobotAction instance)
+            {
+                super.tick(robot, instance);
+                
+                BlockPos pos = robot.getPosition().up();
+                
+                if(!robot.world.isAirBlock(pos))
+                {
+                    robot.world.sendBlockBreakProgress(robot.getEntityId(), pos, ((instance.getTime()) * 10) / robot.getCurrentDestroyTime());
+                }
+            }
+            
+            @Override
+            public boolean isDone(RobotEntity robot, RobotAction instance)
+            {
+                BlockPos pos = robot.getPosition().up();
+                
+                if(robot.world.isAirBlock(pos))
+                {
+                    return true;
+                }
+                
+                if(instance.getTime() >= robot.getCurrentDestroyTime())
+                {
+                    BlockState state = robot.world.getBlockState(pos);
+                    ItemStack itemStack = robot.getActiveItemStack();
+                    
+                    itemStack.onBlockDestroyed(robot.world, state, pos, robot.getFakePlayer());
+                    robot.insertItems(robot.getDrops(itemStack, pos, state));
+                    robot.world.removeBlock(pos, false);
+                    
+                    return true;
+                }
+                
+                return false;
+            }
+        }.setRegistryName(VRobot.MOD_ID, "harvest_above"));
         
         registry.register(new PredicateRobotActionType((r, i) ->
         {
