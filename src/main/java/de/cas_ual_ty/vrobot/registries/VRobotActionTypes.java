@@ -27,7 +27,6 @@ public class VRobotActionTypes
 {
     public static final RobotActionType IDLE = null;
     public static final RobotActionType IDLE_FAILURE = null;
-    public static final RobotActionType IDLE_PAUSED = null;
     public static final RobotActionType PAUSE = null;
     public static final RobotActionType END = null;
     public static final RobotActionType FORWARD = null;
@@ -39,8 +38,6 @@ public class VRobotActionTypes
     public static final RobotActionType NEXT_SLOT = null;
     public static final RobotActionType PREV_SLOT = null;
     public static final RobotActionType RESET_SLOT = null;
-    public static final RobotActionType IMPORT_ITEM = null;
-    public static final RobotActionType EXPORT_ITEM = null;
     public static final RobotActionType HARVEST = null;
     
     public static final RobotActionType DEBUG = null; //TODO

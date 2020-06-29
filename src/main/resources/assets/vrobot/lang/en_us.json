@@ -1,4 +1,6 @@
 {
+    "item.vrobot.robot": "Robot",
+    
     "_commentEvents": "--- Immediates ---",
     
     "node.vrobot:initialize": "Initialize",
