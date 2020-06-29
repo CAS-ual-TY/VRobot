@@ -4,7 +4,7 @@ Visually Programmable Mining and Building Robots.
 ### Current MC Version: 1.15.2
 
 #### Curseforge Project Page
-TODO
+**[https://www.curseforge.com/minecraft/mc-mods/vrobot](https://www.curseforge.com/minecraft/mc-mods/vrobot)**
 
 ## About
 VRobot allows you to progrmm either harvesting robots or building robots. Both types of robots are programmed using a visual programming language provided by the mod API **[Visibilis](https://github.com/CAS-ual-TY/Visibilis)**.
