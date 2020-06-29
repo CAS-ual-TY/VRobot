@@ -584,9 +584,8 @@ public class RobotEntity extends EntityPrint implements INamedContainerProvider,
         return this.getPosition().add(this.getDirectionFromYaw().getDirectionVec());
     }
     
-    public int getCurrentDestroyTime()
+    public int getCurrentDestroyTime(BlockPos pos)
     {
-        BlockPos pos = this.getForwardPos();
         return this.getDestroyTime(this.getActiveItemStack(), this.world.getBlockState(pos), pos);
     }
     

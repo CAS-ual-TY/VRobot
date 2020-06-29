@@ -115,7 +115,7 @@ public class VRobotActionTypes
                 
                 if(!robot.world.isAirBlock(pos))
                 {
-                    robot.world.sendBlockBreakProgress(robot.getEntityId(), pos, ((instance.getTime()) * 10) / robot.getCurrentDestroyTime());
+                    robot.world.sendBlockBreakProgress(robot.getEntityId(), pos, ((instance.getTime()) * 10) / robot.getCurrentDestroyTime(pos));
                 }
             }
             
@@ -129,7 +129,7 @@ public class VRobotActionTypes
                     return true;
                 }
                 
-                if(instance.getTime() >= robot.getCurrentDestroyTime())
+                if(instance.getTime() >= robot.getCurrentDestroyTime(pos))
                 {
                     BlockState state = robot.world.getBlockState(pos);
                     ItemStack itemStack = robot.getActiveItemStack();
@@ -169,7 +169,7 @@ public class VRobotActionTypes
                 
                 if(!robot.world.isAirBlock(pos))
                 {
-                    robot.world.sendBlockBreakProgress(robot.getEntityId(), pos, ((instance.getTime()) * 10) / robot.getCurrentDestroyTime());
+                    robot.world.sendBlockBreakProgress(robot.getEntityId(), pos, ((instance.getTime()) * 10) / robot.getCurrentDestroyTime(pos));
                 }
             }
             
@@ -183,7 +183,7 @@ public class VRobotActionTypes
                     return true;
                 }
                 
-                if(instance.getTime() >= robot.getCurrentDestroyTime())
+                if(instance.getTime() >= robot.getCurrentDestroyTime(pos))
                 {
                     BlockState state = robot.world.getBlockState(pos);
                     ItemStack itemStack = robot.getActiveItemStack();
@@ -223,7 +223,7 @@ public class VRobotActionTypes
                 
                 if(!robot.world.isAirBlock(pos))
                 {
-                    robot.world.sendBlockBreakProgress(robot.getEntityId(), pos, ((instance.getTime()) * 10) / robot.getCurrentDestroyTime());
+                    robot.world.sendBlockBreakProgress(robot.getEntityId(), pos, ((instance.getTime()) * 10) / robot.getCurrentDestroyTime(pos));
                 }
             }
             
@@ -237,7 +237,7 @@ public class VRobotActionTypes
                     return true;
                 }
                 
-                if(instance.getTime() >= robot.getCurrentDestroyTime())
+                if(instance.getTime() >= robot.getCurrentDestroyTime(pos))
                 {
                     BlockState state = robot.world.getBlockState(pos);
                     ItemStack itemStack = robot.getActiveItemStack();
