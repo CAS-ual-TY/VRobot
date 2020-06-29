@@ -102,6 +102,16 @@
     "field.vrobot:harvest.in1": "(I)",
     "node.vrobot:harvest.groups": "robot_actions",
     
+    "node.vrobot:harvest_below": "Harvest Below",
+    "field.vrobot:harvest_below.out1": "(O)",
+    "field.vrobot:harvest_below.in1": "(I)",
+    "node.vrobot:harvest_below.groups": "robot_actions",
+    
+    "node.vrobot:harvest_above": "Harvest Above",
+    "field.vrobot:harvest_above.out1": "(O)",
+    "field.vrobot:harvest_above.in1": "(I)",
+    "node.vrobot:harvest_above.groups": "robot_actions",
+    
     "node.vrobot:debug": "Debug",
     "field.vrobot:debug.out1": "(O)",
     "field.vrobot:debug.in1": "(I)",
