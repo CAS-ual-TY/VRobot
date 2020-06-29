@@ -12,6 +12,7 @@ VRobot allows you to progrmm either harvesting robots or building robots. Both t
 - Can not go through walls (TODO)
 - Use tools to harvest; affected by enchantments (like silk touch) and other tool features (TiC hammers!)
 - Require energy (any furnace fuel also works) (TODO)
+
 **Building Robots** (TODO)
 - Can go through walls
 - Can place blocks
@@ -30,6 +31,7 @@ Generally, the robot always follows the following principle:
 - Run the visual code (Tick node)
 - Work down all queued robot actions
 - Repeat
+
 On the initial start, however, the Initialize node is called (this is done only once; only when the robot is started, NOT when it is continued), instead of the Tick node. These 2 mentioned nodes are event nodes; they are the beginning of your code. They get called from outside your coding frame and from that point on you can decide what it called next.
 #### You can programm your robot using only the Initialize node
 I already mentioned that the robot just works down all robot actions. So you can just queue all actions you want in the Initialize phase and not use the Tick phase at all. Eg. you tell the robot to Harvest Front and then to Move Forward, and now to repeat this 10 times. The robot does all of that and then nothing anymore, as the Initialize node is only called once. The advantage is simplicity and predictability, the disadvantage is that you do not have access to Immediates.
@@ -40,10 +42,12 @@ There are 2 types of nodes that are used by the robot: **Immediates** and **Robo
 - Do not cost energy
 - Execute immediately on code execution
 - Finish immediately (0 time)
+
 #### Robot Actions
 - Cost energy
 - Buffered in the robot (in a queue); get executed 1 by 1 after code execution is done
 - Take time to finish (depending on action and other factors eg. harvesting depends on tool and block)
+
 #### Example: Possible Errors or Immediates
 Lets say you call the following code on the Initialize node:
 4x Forward (Robot Action), 1x Export Items (Immediate)
