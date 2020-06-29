@@ -1,0 +1,107 @@
+{
+    "_commentEvents": "--- Immediates ---",
+    
+    "node.vrobot:initialize": "Initialize",
+    "field.vrobot:initialize.out1": "(O)",
+    "node.vrobot:initialize.groups": "events",
+    
+    "node.vrobot:tick": "Tick",
+    "field.vrobot:tick.out1": "(O)",
+    "node.vrobot:tick.groups": "events",
+    
+    "_commentImmediates": "--- Immediates ---",
+    "group.immediates": "Immediates",
+    "group.immediates.tags": "immediates",
+    
+    "node.vrobot:start": "Start",
+    "field.vrobot:start.out1": "(O)",
+    "field.vrobot:start.in1": "(I)",
+    "node.vrobot:start.groups": "immediates",
+    
+    "node.vrobot:continue": "Continue",
+    "field.vrobot:continue.out1": "(O)",
+    "field.vrobot:continue.in1": "(I)",
+    "node.vrobot:continue.groups": "immediates",
+    
+    "node.vrobot:export_items": "Export Items",
+    "field.vrobot:export_items.out1": "(O)",
+    "field.vrobot:export_items.in1": "(I)",
+    "field.vrobot:export_items.in2": "Item Handler",
+    "node.vrobot:export_items.groups": "immediates",
+    
+    "node.vrobot:get_item_handler_block": "Get Block Item Handler",
+    "field.vrobot:get_item_handler_block.out1": "(O) Item Handler != null",
+    "field.vrobot:get_item_handler_block.out2": "Item Handler",
+    "field.vrobot:get_item_handler_block.out3": "(O) Item Handler == null",
+    "field.vrobot:get_item_handler_block.in1": "(I)",
+    "node.vrobot:get_item_handler_block.groups": "immediates",
+    
+    "_commentActions": "--- Actions ---",
+    "group.robot_actions": "Robot Actions",
+    "group.robot_actions.tags": "actions",
+    
+    "node.vrobot:pause": "Pause",
+    "field.vrobot:pause.out1": "(O)",
+    "field.vrobot:pause.in1": "(I)",
+    "node.vrobot:pause.groups": "robot_actions",
+    
+    "node.vrobot:end": "End",
+    "field.vrobot:end.out1": "(O)",
+    "field.vrobot:end.in1": "(I)",
+    "node.vrobot:end.groups": "robot_actions",
+    
+    "node.vrobot:forward": "Forward",
+    "field.vrobot:forward.out1": "(O)",
+    "field.vrobot:forward.in1": "(I)",
+    "node.vrobot:forward.groups": "robot_actions",
+    
+    "node.vrobot:up": "Up",
+    "field.vrobot:up.out1": "(O)",
+    "field.vrobot:up.in1": "(I)",
+    "node.vrobot:up.groups": "robot_actions",
+    
+    "node.vrobot:down": "Down",
+    "field.vrobot:down.out1": "(O)",
+    "field.vrobot:down.in1": "(I)",
+    "node.vrobot:down.groups": "robot_actions",
+    
+    "node.vrobot:turn_left": "Turn Left",
+    "field.vrobot:turn_left.out1": "(O)",
+    "field.vrobot:turn_left.in1": "(I)",
+    "node.vrobot:turn_left.groups": "robot_actions",
+    
+    "node.vrobot:turn_right": "Turn Right",
+    "field.vrobot:turn_right.out1": "(O)",
+    "field.vrobot:turn_right.in1": "(I)",
+    "node.vrobot:turn_right.groups": "robot_actions",
+    
+    "node.vrobot:pause_1_sec": "Pause 1 Sec",
+    "field.vrobot:pause_1_sec.out1": "(O)",
+    "field.vrobot:pause_1_sec.in1": "(I)",
+    "node.vrobot:pause_1_sec.groups": "robot_actions",
+    
+    "node.vrobot:next_slot": "Next Slot",
+    "field.vrobot:next_slot.out1": "(O)",
+    "field.vrobot:next_slot.in1": "(I)",
+    "node.vrobot:next_slot.groups": "robot_actions",
+    
+    "node.vrobot:prev_slot": "Prev Slot",
+    "field.vrobot:prev_slot.out1": "(O)",
+    "field.vrobot:prev_slot.in1": "(I)",
+    "node.vrobot:prev_slot.groups": "robot_actions",
+    
+    "node.vrobot:reset_slot": "Reset Slot",
+    "field.vrobot:reset_slot.out1": "(O)",
+    "field.vrobot:reset_slot.in1": "(I)",
+    "node.vrobot:reset_slot.groups": "robot_actions",
+    
+    "node.vrobot:harvest": "Harvest",
+    "field.vrobot:harvest.out1": "(O)",
+    "field.vrobot:harvest.in1": "(I)",
+    "node.vrobot:harvest.groups": "robot_actions",
+    
+    "node.vrobot:debug": "Debug",
+    "field.vrobot:debug.out1": "(O)",
+    "field.vrobot:debug.in1": "(I)",
+    "node.vrobot:debug.groups": "robot_actions"
+}
