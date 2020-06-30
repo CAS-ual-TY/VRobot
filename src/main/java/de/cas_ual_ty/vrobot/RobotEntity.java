@@ -586,7 +586,7 @@ public class RobotEntity extends EntityPrint implements INamedContainerProvider,
     
     public int getCurrentDestroyTime(BlockPos pos)
     {
-        return this.getDestroyTime(this.getActiveItemStack(), this.world.getBlockState(pos), pos);
+        return Math.max(1, this.getDestroyTime(this.getActiveItemStack(), this.world.getBlockState(pos), pos));
     }
     
     public int getDestroyTime(ItemStack itemStack, BlockState block, BlockPos pos) //From Block#getPlayerRelativeBlockHardness
