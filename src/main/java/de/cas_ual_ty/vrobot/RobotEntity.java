@@ -7,14 +7,13 @@ import java.util.function.Function;
 
 import com.mojang.authlib.GameProfile;
 
+import de.cas_ual_ty.visibilis.node.NodeType;
 import de.cas_ual_ty.visibilis.print.Print;
 import de.cas_ual_ty.visibilis.print.entity.EntityPrint;
 import de.cas_ual_ty.visibilis.print.provider.DataProvider;
-import de.cas_ual_ty.visibilis.print.provider.NodeListProvider;
 import de.cas_ual_ty.vrobot.action.RobotAction;
 import de.cas_ual_ty.vrobot.network.SynchRobotToClientMessage;
 import de.cas_ual_ty.vrobot.provider.RobotDataKey;
-import de.cas_ual_ty.vrobot.provider.RobotNodeListProvider;
 import de.cas_ual_ty.vrobot.registries.VRobotActionTypes;
 import de.cas_ual_ty.vrobot.registries.VRobotItems;
 import net.minecraft.block.Block;
@@ -146,9 +145,9 @@ public class RobotEntity extends EntityPrint implements INamedContainerProvider,
     }
     
     @Override
-    public NodeListProvider getNodeList()
+    public List<NodeType<?>> getNodeTypeList()
     {
-        return new RobotNodeListProvider();
+        return VRobot.ROBOT_NODE_TYPES;
     }
     
     @Override

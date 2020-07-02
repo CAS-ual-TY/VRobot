@@ -1,5 +1,10 @@
 package de.cas_ual_ty.vrobot;
 
+import java.util.LinkedList;
+import java.util.List;
+
+import de.cas_ual_ty.visibilis.node.NodeType;
+import de.cas_ual_ty.visibilis.print.provider.NodeListProviderBase;
 import de.cas_ual_ty.vrobot.action.RobotActionType;
 import de.cas_ual_ty.vrobot.network.ContinueRobotMessage;
 import de.cas_ual_ty.vrobot.network.DropRobotMessage;
@@ -7,6 +12,7 @@ import de.cas_ual_ty.vrobot.network.OpenRobotInventoryMessage;
 import de.cas_ual_ty.vrobot.network.StartRobotMessage;
 import de.cas_ual_ty.vrobot.network.StopRobotMessage;
 import de.cas_ual_ty.vrobot.network.SynchRobotToClientMessage;
+import de.cas_ual_ty.vrobot.registries.VRobotNodeTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent.NewRegistry;
@@ -38,6 +44,8 @@ public class VRobot
     
     public static IForgeRegistry<RobotActionType> ACTION_TYPES_REGISTRY;
     
+    public static List<NodeType<?>> ROBOT_NODE_TYPES;
+    
     public VRobot()
     {
         VRobot.proxy = DistExecutor.runForDist(() -> de.cas_ual_ty.vrobot.client.ClientProxy::new, () -> (() -> new IProxy()
@@ -66,6 +74,8 @@ public class VRobot
         VRobot.channel.registerMessage(5, OpenRobotInventoryMessage.class, OpenRobotInventoryMessage::encode, OpenRobotInventoryMessage::decode, OpenRobotInventoryMessage::handle);
         
         VRobot.proxy.registerRenderer();
+        
+        VRobot.ROBOT_NODE_TYPES = VRobot.robot(new LinkedList<>());
     }
     
     @SuppressWarnings({ "rawtypes", "unchecked" })
@@ -81,5 +91,33 @@ public class VRobot
             RobotEntity robot = (RobotEntity)event.getTarget();
             robot.playerInteract(event.getPlayer());
         }
+    }
+    
+    public static List<NodeType<?>> robot(List<NodeType<?>> list)
+    {
+        list.add(VRobotNodeTypes.INITIALIZE);
+        list.add(VRobotNodeTypes.START);
+        list.add(VRobotNodeTypes.CONTINUE);
+        list.add(VRobotNodeTypes.TICK);
+        list.add(VRobotNodeTypes.PAUSE);
+        list.add(VRobotNodeTypes.END);
+        list.add(VRobotNodeTypes.FORWARD);
+        list.add(VRobotNodeTypes.UP);
+        list.add(VRobotNodeTypes.DOWN);
+        list.add(VRobotNodeTypes.TURN_LEFT);
+        list.add(VRobotNodeTypes.TURN_RIGHT);
+        list.add(VRobotNodeTypes.PAUSE_1_SEC);
+        list.add(VRobotNodeTypes.NEXT_SLOT);
+        list.add(VRobotNodeTypes.PREV_SLOT);
+        list.add(VRobotNodeTypes.RESET_SLOT);
+        list.add(VRobotNodeTypes.HARVEST);
+        list.add(VRobotNodeTypes.HARVEST_BELOW);
+        list.add(VRobotNodeTypes.HARVEST_ABOVE);
+        list.add(VRobotNodeTypes.EXPORT_ITEMS);
+        list.add(VRobotNodeTypes.GET_ITEM_HANDLER_BLOCK);
+        list.add(VRobotNodeTypes.DEBUG); //TODO
+        NodeListProviderBase.exec(list);
+        NodeListProviderBase.base(list);
+        return list;
     }
 }
